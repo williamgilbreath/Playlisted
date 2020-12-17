@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Vollkorn';
+  src: local('Vollkorn'), url("./fonts/Vollkorn-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'MontserratLight';
+  src: local('MontserratLight'), url("./fonts/Montserrat-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'MontserratMedium';
+  src: local('MontserratMedium'), url("./fonts/Montserrat-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Raleway';
+  src: local('Raleway'), url("./fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
