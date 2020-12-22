@@ -8,14 +8,12 @@ import Card from "@material-ui/core/Card";
 import { makeStyles } from "@material-ui/core/styles";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
-import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         color: 'black'
     },
     imgHeader: {
-        //width: '105px',
         width: '6.5625em',
         margin: '0'
     },
@@ -49,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     cardHeader: {
         fontSize: '1.5em',
         textAlign: 'left',
-        fontFamily: 'MontserratMedium', //maybe switch to medium here
+        fontFamily: 'MontserratMedium',
     },
     textBox: {
       marginLeft: '-20px'
@@ -75,8 +73,13 @@ const useStyles = makeStyles((theme) => ({
         height: '100%',
     },
     inputField: {
-        fontSize: '5em',
+        fontSize: '1em',
         color: 'white',
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        border: 'none',
+        width: 'auto',
+        textAlign: 'center',
+        fontFamily: 'MontserratMedium'
     },
     circularProgress: {
         marginTop: '35vh'
@@ -86,7 +89,6 @@ const useStyles = makeStyles((theme) => ({
 const theme = createMuiTheme({
     palette: {
         primary: {
-            //main: '#2F2D2E'
             main: '#ffffff'
         },
         secondary: {
@@ -95,10 +97,8 @@ const theme = createMuiTheme({
     }
 })
 
-//btn borderRadius 10px
-const Playlist = ({playlistArr, setPlaylistArr}) => {
+const Playlist = ({playlistArr}) => {
     const classes = useStyles();
-    const [playlistName, setPlaylistName] = useState();
     const backButton = (e) => {
         e.preventDefault()
         navigate("/home")
@@ -128,7 +128,7 @@ const Playlist = ({playlistArr, setPlaylistArr}) => {
                     {
                         playlistArr ?
                             <form className={classes.header}>
-                                <TextField variant="outlined" label="Playlist name..." color="primary" className={classes.inputField}/>
+                                <input variant="outlined" placeholder="Playlist name..." type="text" className={classes.inputField}/>
                             </form>
                             : null
                     }

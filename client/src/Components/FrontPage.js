@@ -14,11 +14,9 @@ import {GiNightSleep, GiPartyPopper, GiRabbit, GiTurtle} from "react-icons/gi";
 import {FaRunning, FaWalking} from "react-icons/fa";
 import {IoIosPeople, IoIosPerson} from "react-icons/io";
 import Slider from "@material-ui/core/Slider";
-import PopPop from 'react-poppop';
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import vinyl from '../images/vinylIcon.png'
-import vinyls from '../images/vinyls.png'
 
 const theme = createMuiTheme({
     palette: {
@@ -33,7 +31,6 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme)=> ({
     root: {
-        //backgroundColor: '#f7f6f3',
         fontFamily: 'Vollkorn',
         color: 'black',
         height: '100vh'
@@ -51,7 +48,6 @@ const useStyles = makeStyles((theme)=> ({
         fontFamily: 'MontserratLight',
         marginBottom: '0',
         color: 'white',
-        //backgroundColor: '#FF5A5F',
     },
     subheader: {
         fontFamily: 'Raleway',
@@ -63,10 +59,8 @@ const useStyles = makeStyles((theme)=> ({
     search: {
         color: 'black',
         width: '50em',
-        //marginTop: '1em'
     },
     searchBtn: {
-        //marginTop: '1em',
         padding: '1em 1.5em',
         marginLeft: '2em',
         borderRadius: '10px',
@@ -131,10 +125,7 @@ const useStyles = makeStyles((theme)=> ({
     searchField: {
         marginTop: '-5em',
     },
-    waves: {
-        //position: 'fixed',
 
-    },
     headerBox: {
         backgroundColor: '#FF5A5F',
     },
@@ -285,7 +276,6 @@ const FrontPage = ({newToken, active, setActive, activeId, setActiveId, activeUr
     //Finding the recommended tracks and setting them to array
     const buttonHandler = (e) => {
         e.preventDefault()
-        //navigate("/questionaire")
         setOpen(true)
     }
     const handleClose = () => {
@@ -404,7 +394,7 @@ const FrontPage = ({newToken, active, setActive, activeId, setActiveId, activeUr
         <div className={classes.root}>
             <Grid container direction="column" justify="center" alignItems="center">
                 <Grid item xs={12} container direction="column" justify="center" alignItems="center">
-                    <form onSubmit={submitHandler} className={classes.waves}>
+                    <form onSubmit={submitHandler}>
                         <Grid item xs={12} container direction="row" justify="center" alignItems="center" className={classes.headerBox}>
                             <Grid item xs={2}>
                                 <img src={vinyl} className={classes.coverIcon}/>
@@ -420,8 +410,6 @@ const FrontPage = ({newToken, active, setActive, activeId, setActiveId, activeUr
                         <Grid item xs={12} className={classes.searchField}>
                             <h1 className={classes.searchHeader}>Just enter in a song, artist, or album below!</h1>
                             <TextField color="secondary" size="large" id="standard-search" label="Put in a song..." type="search" onChange={searchFunction} className={classes.search} variant="outlined"/>
-                        {/*</Grid>
-                        <Grid item xs={12}>*/}
                             <Button type="submit" variant="contained" color="secondary" size="large" className={classes.searchBtn}>Search</Button>
                         </Grid>
                     </form>
@@ -472,7 +460,6 @@ const FrontPage = ({newToken, active, setActive, activeId, setActiveId, activeUr
                                                 <h3 className={classes.artistName}>{item.artists[1].name}</h3> : null
                                             }
                                         </Grid>
-                                        {/*make the button an icon*/}
                                     </Grid>
                                     <Button onClick={buttonHandler} className={classes.createBtn} variant="contained" color="secondary">Create Playlist</Button>
                                 </Grid>
